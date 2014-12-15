@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  person_id: 1
+  name: MyString1
+  person: :five
   profile: MyString
 
 two:
-  name: MyString
+  name:
   person_id: 1
+  profile: MyString
+
+three:
+  name: MyString
+  person_id:
+  profile: MyString
+
+four:
+  name: MyString
+  person_id: :six
   profile: MyString

@@ -5,9 +5,4 @@ class Group < ActiveRecord::Base
   validate :person_is_teacher
 
   has_many :peoples
-
-  private
-  def person_is_teacher
-    Person.find(:person_id).is_teacher?
-  end
 end
