@@ -9,11 +9,13 @@ class GroupsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:groups)
+    assert_template 'groups/index'
   end
 
   test "should get new" do
     get :new
     assert_response :success
+    assert_template 'groups/new'
   end
 
   test "should create group" do
@@ -24,14 +26,25 @@ class GroupsControllerTest < ActionController::TestCase
     assert_redirected_to group_path(assigns(:group))
   end
 
+  test "should not create group" do
+    assert_no_difference('Group.count') do
+      post :create, group: {name: '  ', person_id: @group.person_id}
+    end
+
+    assert_response :success
+    assert_template 'groups/new'
+  end
+
   test "should show group" do
     get :show, id: @group
     assert_response :success
+    assert_template 'groups/show'
   end
 
   test "should get edit" do
     get :edit, id: @group
     assert_response :success
+    assert_template 'groups/edit'
   end
 
   test "should update group" do
