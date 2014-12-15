@@ -2,7 +2,7 @@
 
 one:
   name: MyString1
-  person: :five
+  person_id: 5
   profile: MyString
 
 two:
